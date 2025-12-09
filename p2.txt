@@ -1,0 +1,29 @@
+-- AUTHORS
+INSERT INTO authors (author_name)
+VALUES 
+('George Orwell'),
+('J.K. Rowling');
+
+-- GENRES
+INSERT INTO genres (genre_name)
+VALUES
+('Dystopian'),
+('Fantasy');
+
+-- BOOKS
+INSERT INTO books (title, publication_year, author_id, genre_id)
+VALUES
+('1984', 2011-12-18, 1, 1),
+('Harry Potter and the Sorcerer''s Stone', 1997, 2, 2);
+
+-- USERS
+INSERT INTO users (username, email)
+VALUES
+('alice', 'alice@example.com'),
+('bob', 'bob@example.com');
+
+-- BORROWED BOOKS
+INSERT INTO borrowed_books (book_id, user_id, borrow_date, return_date)
+VALUES
+(1, 1, '2025-01-10', '2025-01-20'),
+(2, 2, '2025-02-01', NULL);
