@@ -1,0 +1,14 @@
+SELECT categories.name as category_name, COUNT(products.category_id) count, AVG(order_details.quantity) as avg_quantity  FROM products
+INNER JOIN categories ON category_id = categories.id
+INNER JOIN suppliers ON supplier_id = suppliers.id
+INNER JOIN order_details ON products.id = order_details.product_id
+INNER JOIN orders ON order_details.order_id = orders.id
+INNER JOIN employees ON orders.employee_id = employees.employee_id
+INNER JOIN shippers ON orders.shipper_id = shippers.id
+INNER JOIN customers ON orders.customer_id = customers.id
+WHERE employees.employee_id > 3 AND employees.employee_id
+GROUP BY categories.name
+HAVING AVG(order_details.quantity) > 21
+ORDER BY count DESC
+LIMIT 4
+OFFSET 1;
